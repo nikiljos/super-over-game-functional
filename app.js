@@ -25,6 +25,9 @@ let scoreData = [
 
 strikeButton.onclick = () => {
     if(turn!==1&&turn!==2){
+        if (confirm("The match is already over! Want to play another Super Over?")) {
+            window.location.reload();
+        }
         return
     }
     strikeAudio.pause();
