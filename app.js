@@ -47,11 +47,14 @@ strikeButton.onclick = () => {
     document.getElementById(`wickets-team${turn}`).textContent =
         scoreData[turn - 1].wicket;
 
-    if (scoreData[turn-1].wicket >= 2 || scoreData[turn-1].balls>=6) {
-        if(turn===1){
+    if (
+        scoreData[turn - 1].wicket >= 2 ||
+        scoreData[turn - 1].balls >= 6 ||
+        scoreData[1].score > scoreData[0].score
+    ) {
+        if (turn === 1) {
             turn++;
-        }
-        else{
+        } else {
             turn++;
             endGame();
         }
